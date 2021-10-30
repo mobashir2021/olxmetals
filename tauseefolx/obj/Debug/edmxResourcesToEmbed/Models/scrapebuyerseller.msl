@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="olxappModelStoreContainer" CdmEntityContainer="olxappEntities">
+    <EntitySetMapping Name="AuctionItems">
+      <EntityTypeMapping TypeName="olxappModel.AuctionItem">
+        <MappingFragment StoreEntitySet="AuctionItems">
+          <ScalarProperty Name="AuctionItemid" ColumnName="AuctionItemid" />
+          <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+          <ScalarProperty Name="Buyerid" ColumnName="Buyerid" />
+          <ScalarProperty Name="Auctionprice" ColumnName="Auctionprice" />
+          <ScalarProperty Name="SoldStatus" ColumnName="SoldStatus" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Biddingtypes">
+      <EntityTypeMapping TypeName="olxappModel.Biddingtype">
+        <MappingFragment StoreEntitySet="Biddingtype">
+          <ScalarProperty Name="Biddingtypeid" ColumnName="Biddingtypeid" />
+          <ScalarProperty Name="Biddingtype1" ColumnName="Biddingtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyItems">
+      <EntityTypeMapping TypeName="olxappModel.BuyItem">
+        <MappingFragment StoreEntitySet="BuyItems">
+          <ScalarProperty Name="BuyItemid" ColumnName="BuyItemid" />
+          <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+          <ScalarProperty Name="Buyerid" ColumnName="Buyerid" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="Finalprice" ColumnName="Finalprice" />
+          <ScalarProperty Name="Boughtdate" ColumnName="Boughtdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="olxappModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Categoriesid" ColumnName="Categoriesid" />
+          <ScalarProperty Name="Categoryname" ColumnName="Categoryname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favorites">
+      <EntityTypeMapping TypeName="olxappModel.Favorite">
+        <MappingFragment StoreEntitySet="Favorites">
+          <ScalarProperty Name="Favouritesid" ColumnName="Favouritesid" />
+          <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usertables">
+      <EntityTypeMapping TypeName="olxappModel.Usertable">
+        <MappingFragment StoreEntitySet="Usertable">
+          <ScalarProperty Name="Usertableid" ColumnName="Usertableid" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellItems">
+      <EntityTypeMapping TypeName="olxappModel.SellItem">
+        <MappingFragment StoreEntitySet="SellItems">
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Auctionaddress" ColumnName="Auctionaddress" />
+          <ScalarProperty Name="AuctionZipcode" ColumnName="AuctionZipcode" />
+          <ScalarProperty Name="AuctionPlace" ColumnName="AuctionPlace" />
+          <ScalarProperty Name="Auctiondate" ColumnName="Auctiondate" />
+          <ScalarProperty Name="LowestBiddingPrice" ColumnName="LowestBiddingPrice" />
+          <ScalarProperty Name="Sold" ColumnName="Sold" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Productimagefour" ColumnName="Productimagefour" />
+          <ScalarProperty Name="Productimagethree" ColumnName="Productimagethree" />
+          <ScalarProperty Name="Productimagetwo" ColumnName="Productimagetwo" />
+          <ScalarProperty Name="Productimageone" ColumnName="Productimageone" />
+          <ScalarProperty Name="Productdescription" ColumnName="Productdescription" />
+          <ScalarProperty Name="Productname" ColumnName="Productname" />
+          <ScalarProperty Name="Usertableid" ColumnName="Usertableid" />
+          <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="olxappModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AuctionItem">
+    <Key>
+      <PropertyRef Name="AuctionItemid" />
+    </Key>
+    <Property Name="AuctionItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SellItemid" Type="Int32" />
+    <Property Name="Buyerid" Type="Int32" />
+    <Property Name="Auctionprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SoldStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Createddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Biddingtype">
+    <Key>
+      <PropertyRef Name="Biddingtypeid" />
+    </Key>
+    <Property Name="Biddingtypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Biddingtype1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BuyItem">
+    <Key>
+      <PropertyRef Name="BuyItemid" />
+    </Key>
+    <Property Name="BuyItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SellItemid" Type="Int32" />
+    <Property Name="Buyerid" Type="Int32" />
+    <Property Name="DiscountPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Finalprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Boughtdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Categoriesid" />
+    </Key>
+    <Property Name="Categoriesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoryname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Favorite">
+    <Key>
+      <PropertyRef Name="Favouritesid" />
+    </Key>
+    <Property Name="Favouritesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SellItemid" Type="Int32" />
+    <Property Name="Userid" Type="Int32" />
+    <Property Name="Createddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Usertable">
+    <Key>
+      <PropertyRef Name="Usertableid" />
+    </Key>
+    <Property Name="Usertableid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Usertype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Zipcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="olxappEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AuctionItems" EntityType="Self.AuctionItem" />
+    <EntitySet Name="Biddingtypes" EntityType="Self.Biddingtype" />
+    <EntitySet Name="BuyItems" EntityType="Self.BuyItem" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Favorites" EntityType="Self.Favorite" />
+    <EntitySet Name="Usertables" EntityType="Self.Usertable" />
+    <EntitySet Name="SellItems" EntityType="olxappModel.SellItem" />
+  </EntityContainer>
+  <EntityType Name="SellItem">
+    <Key>
+      <PropertyRef Name="SellItemid" />
+    </Key>
+    <Property Name="SellItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usertableid" Type="Int32" />
+    <Property Name="Productname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Productdescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Productimageone" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Productimagetwo" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Productimagethree" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Productimagefour" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Createddate" Type="DateTime" Precision="3" />
+    <Property Name="Sold" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LowestBiddingPrice" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Auctiondate" Type="DateTime" Precision="3" />
+    <Property Name="AuctionPlace" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AuctionZipcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Auctionaddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

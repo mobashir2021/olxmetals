@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="olxappModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AuctionItems">
+          <Key>
+            <PropertyRef Name="AuctionItemid" />
+          </Key>
+          <Property Name="AuctionItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SellItemid" Type="int" />
+          <Property Name="Buyerid" Type="int" />
+          <Property Name="Auctionprice" Type="varchar" MaxLength="100" />
+          <Property Name="SoldStatus" Type="varchar" MaxLength="100" />
+          <Property Name="Createddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Biddingtype">
+          <Key>
+            <PropertyRef Name="Biddingtypeid" />
+          </Key>
+          <Property Name="Biddingtypeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Biddingtype" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BuyItems">
+          <Key>
+            <PropertyRef Name="BuyItemid" />
+          </Key>
+          <Property Name="BuyItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SellItemid" Type="int" />
+          <Property Name="Buyerid" Type="int" />
+          <Property Name="DiscountPrice" Type="varchar" MaxLength="100" />
+          <Property Name="Finalprice" Type="varchar" MaxLength="100" />
+          <Property Name="Boughtdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Categoriesid" />
+          </Key>
+          <Property Name="Categoriesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Categoryname" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="Favouritesid" />
+          </Key>
+          <Property Name="Favouritesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SellItemid" Type="int" />
+          <Property Name="Userid" Type="int" />
+          <Property Name="Createddate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SellItems">
+          <Key>
+            <PropertyRef Name="SellItemid" />
+          </Key>
+          <Property Name="SellItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Usertableid" Type="int" />
+          <Property Name="Productname" Type="varchar" MaxLength="100" />
+          <Property Name="Productdescription" Type="varchar" MaxLength="1000" />
+          <Property Name="Productimageone" Type="varchar" MaxLength="2000" />
+          <Property Name="Productimagetwo" Type="varchar" MaxLength="2000" />
+          <Property Name="Productimagethree" Type="varchar" MaxLength="2000" />
+          <Property Name="Productimagefour" Type="varchar" MaxLength="2000" />
+          <Property Name="Price" Type="varchar" MaxLength="100" />
+          <Property Name="Createddate" Type="datetime" />
+          <Property Name="Sold" Type="varchar" MaxLength="100" />
+          <Property Name="LowestBiddingPrice" Type="varchar" MaxLength="1000" />
+          <Property Name="Auctiondate" Type="datetime" />
+          <Property Name="AuctionPlace" Type="varchar" MaxLength="2000" />
+          <Property Name="AuctionZipcode" Type="varchar" MaxLength="100" />
+          <Property Name="Auctionaddress" Type="varchar" MaxLength="2000" />
+          <Property Name="Category" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usertable">
+          <Key>
+            <PropertyRef Name="Usertableid" />
+          </Key>
+          <Property Name="Usertableid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Usertype" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="1000" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="Zipcode" Type="varchar" MaxLength="100" />
+          <Property Name="Mobileno" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="olxappModelStoreContainer">
+          <EntitySet Name="AuctionItems" EntityType="Self.AuctionItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Biddingtype" EntityType="Self.Biddingtype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BuyItems" EntityType="Self.BuyItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SellItems" EntityType="Self.SellItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usertable" EntityType="Self.Usertable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="olxappModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AuctionItem">
+          <Key>
+            <PropertyRef Name="AuctionItemid" />
+          </Key>
+          <Property Name="AuctionItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SellItemid" Type="Int32" />
+          <Property Name="Buyerid" Type="Int32" />
+          <Property Name="Auctionprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SoldStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Createddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Biddingtype">
+          <Key>
+            <PropertyRef Name="Biddingtypeid" />
+          </Key>
+          <Property Name="Biddingtypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Biddingtype1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BuyItem">
+          <Key>
+            <PropertyRef Name="BuyItemid" />
+          </Key>
+          <Property Name="BuyItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SellItemid" Type="Int32" />
+          <Property Name="Buyerid" Type="Int32" />
+          <Property Name="DiscountPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Finalprice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Boughtdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Categoriesid" />
+          </Key>
+          <Property Name="Categoriesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Categoryname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Favorite">
+          <Key>
+            <PropertyRef Name="Favouritesid" />
+          </Key>
+          <Property Name="Favouritesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SellItemid" Type="Int32" />
+          <Property Name="Userid" Type="Int32" />
+          <Property Name="Createddate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Usertable">
+          <Key>
+            <PropertyRef Name="Usertableid" />
+          </Key>
+          <Property Name="Usertableid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Usertype" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zipcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobileno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="olxappEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuctionItems" EntityType="Self.AuctionItem" />
+          <EntitySet Name="Biddingtypes" EntityType="Self.Biddingtype" />
+          <EntitySet Name="BuyItems" EntityType="Self.BuyItem" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Favorites" EntityType="Self.Favorite" />
+          <EntitySet Name="Usertables" EntityType="Self.Usertable" />
+          <EntitySet Name="SellItems" EntityType="olxappModel.SellItem" />
+        </EntityContainer>
+        <EntityType Name="SellItem">
+          <Key>
+            <PropertyRef Name="SellItemid" />
+          </Key>
+          <Property Name="SellItemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Usertableid" Type="Int32" />
+          <Property Name="Productname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Productdescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Productimageone" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Productimagetwo" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Productimagethree" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Productimagefour" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Createddate" Type="DateTime" Precision="3" />
+          <Property Name="Sold" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LowestBiddingPrice" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Auctiondate" Type="DateTime" Precision="3" />
+          <Property Name="AuctionPlace" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="AuctionZipcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Auctionaddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="olxappModelStoreContainer" CdmEntityContainer="olxappEntities">
+          <EntitySetMapping Name="AuctionItems">
+            <EntityTypeMapping TypeName="olxappModel.AuctionItem">
+              <MappingFragment StoreEntitySet="AuctionItems">
+                <ScalarProperty Name="AuctionItemid" ColumnName="AuctionItemid" />
+                <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+                <ScalarProperty Name="Buyerid" ColumnName="Buyerid" />
+                <ScalarProperty Name="Auctionprice" ColumnName="Auctionprice" />
+                <ScalarProperty Name="SoldStatus" ColumnName="SoldStatus" />
+                <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Biddingtypes">
+            <EntityTypeMapping TypeName="olxappModel.Biddingtype">
+              <MappingFragment StoreEntitySet="Biddingtype">
+                <ScalarProperty Name="Biddingtypeid" ColumnName="Biddingtypeid" />
+                <ScalarProperty Name="Biddingtype1" ColumnName="Biddingtype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuyItems">
+            <EntityTypeMapping TypeName="olxappModel.BuyItem">
+              <MappingFragment StoreEntitySet="BuyItems">
+                <ScalarProperty Name="BuyItemid" ColumnName="BuyItemid" />
+                <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+                <ScalarProperty Name="Buyerid" ColumnName="Buyerid" />
+                <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+                <ScalarProperty Name="Finalprice" ColumnName="Finalprice" />
+                <ScalarProperty Name="Boughtdate" ColumnName="Boughtdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="olxappModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Categoriesid" ColumnName="Categoriesid" />
+                <ScalarProperty Name="Categoryname" ColumnName="Categoryname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favorites">
+            <EntityTypeMapping TypeName="olxappModel.Favorite">
+              <MappingFragment StoreEntitySet="Favorites">
+                <ScalarProperty Name="Favouritesid" ColumnName="Favouritesid" />
+                <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usertables">
+            <EntityTypeMapping TypeName="olxappModel.Usertable">
+              <MappingFragment StoreEntitySet="Usertable">
+                <ScalarProperty Name="Usertableid" ColumnName="Usertableid" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Usertype" ColumnName="Usertype" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SellItems">
+            <EntityTypeMapping TypeName="olxappModel.SellItem">
+              <MappingFragment StoreEntitySet="SellItems">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Auctionaddress" ColumnName="Auctionaddress" />
+                <ScalarProperty Name="AuctionZipcode" ColumnName="AuctionZipcode" />
+                <ScalarProperty Name="AuctionPlace" ColumnName="AuctionPlace" />
+                <ScalarProperty Name="Auctiondate" ColumnName="Auctiondate" />
+                <ScalarProperty Name="LowestBiddingPrice" ColumnName="LowestBiddingPrice" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Productimagefour" ColumnName="Productimagefour" />
+                <ScalarProperty Name="Productimagethree" ColumnName="Productimagethree" />
+                <ScalarProperty Name="Productimagetwo" ColumnName="Productimagetwo" />
+                <ScalarProperty Name="Productimageone" ColumnName="Productimageone" />
+                <ScalarProperty Name="Productdescription" ColumnName="Productdescription" />
+                <ScalarProperty Name="Productname" ColumnName="Productname" />
+                <ScalarProperty Name="Usertableid" ColumnName="Usertableid" />
+                <ScalarProperty Name="SellItemid" ColumnName="SellItemid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

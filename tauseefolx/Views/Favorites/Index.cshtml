@@ -1,0 +1,46 @@
+﻿@model IEnumerable<tauseefolx.Models.Favorite>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SellItemid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Userid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Createddate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellItemid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Userid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Createddate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Favouritesid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Favouritesid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Favouritesid })
+        </td>
+    </tr>
+}
+
+</table>

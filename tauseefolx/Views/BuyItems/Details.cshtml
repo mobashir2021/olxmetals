@@ -1,0 +1,59 @@
+﻿@model tauseefolx.Models.BuyItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BuyItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SellItemid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellItemid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Buyerid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buyerid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finalprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finalprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Boughtdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Boughtdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BuyItemid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

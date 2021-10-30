@@ -1,0 +1,139 @@
+﻿@model tauseefolx.Models.SellItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SellItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Usertableid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usertableid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productdescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productdescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productimageone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productimageone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productimagetwo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productimagetwo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productimagethree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productimagethree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productimagefour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productimagefour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Createddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Createddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LowestBiddingPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LowestBiddingPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auctiondate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auctiondate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionPlace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionPlace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionZipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionZipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auctionaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auctionaddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SellItemid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

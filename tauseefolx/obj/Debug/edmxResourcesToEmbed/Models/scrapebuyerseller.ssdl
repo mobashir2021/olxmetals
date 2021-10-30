@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="olxappModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuctionItems">
+    <Key>
+      <PropertyRef Name="AuctionItemid" />
+    </Key>
+    <Property Name="AuctionItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellItemid" Type="int" />
+    <Property Name="Buyerid" Type="int" />
+    <Property Name="Auctionprice" Type="varchar" MaxLength="100" />
+    <Property Name="SoldStatus" Type="varchar" MaxLength="100" />
+    <Property Name="Createddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Biddingtype">
+    <Key>
+      <PropertyRef Name="Biddingtypeid" />
+    </Key>
+    <Property Name="Biddingtypeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Biddingtype" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BuyItems">
+    <Key>
+      <PropertyRef Name="BuyItemid" />
+    </Key>
+    <Property Name="BuyItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellItemid" Type="int" />
+    <Property Name="Buyerid" Type="int" />
+    <Property Name="DiscountPrice" Type="varchar" MaxLength="100" />
+    <Property Name="Finalprice" Type="varchar" MaxLength="100" />
+    <Property Name="Boughtdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Categoriesid" />
+    </Key>
+    <Property Name="Categoriesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categoryname" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Favorites">
+    <Key>
+      <PropertyRef Name="Favouritesid" />
+    </Key>
+    <Property Name="Favouritesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellItemid" Type="int" />
+    <Property Name="Userid" Type="int" />
+    <Property Name="Createddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SellItems">
+    <Key>
+      <PropertyRef Name="SellItemid" />
+    </Key>
+    <Property Name="SellItemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usertableid" Type="int" />
+    <Property Name="Productname" Type="varchar" MaxLength="100" />
+    <Property Name="Productdescription" Type="varchar" MaxLength="1000" />
+    <Property Name="Productimageone" Type="varchar" MaxLength="2000" />
+    <Property Name="Productimagetwo" Type="varchar" MaxLength="2000" />
+    <Property Name="Productimagethree" Type="varchar" MaxLength="2000" />
+    <Property Name="Productimagefour" Type="varchar" MaxLength="2000" />
+    <Property Name="Price" Type="varchar" MaxLength="100" />
+    <Property Name="Createddate" Type="datetime" />
+    <Property Name="Sold" Type="varchar" MaxLength="100" />
+    <Property Name="LowestBiddingPrice" Type="varchar" MaxLength="1000" />
+    <Property Name="Auctiondate" Type="datetime" />
+    <Property Name="AuctionPlace" Type="varchar" MaxLength="2000" />
+    <Property Name="AuctionZipcode" Type="varchar" MaxLength="100" />
+    <Property Name="Auctionaddress" Type="varchar" MaxLength="2000" />
+    <Property Name="Category" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Usertable">
+    <Key>
+      <PropertyRef Name="Usertableid" />
+    </Key>
+    <Property Name="Usertableid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Usertype" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" />
+    <Property Name="City" Type="varchar" MaxLength="100" />
+    <Property Name="Zipcode" Type="varchar" MaxLength="100" />
+    <Property Name="Mobileno" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="olxappModelStoreContainer">
+    <EntitySet Name="AuctionItems" EntityType="Self.AuctionItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Biddingtype" EntityType="Self.Biddingtype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyItems" EntityType="Self.BuyItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SellItems" EntityType="Self.SellItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usertable" EntityType="Self.Usertable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

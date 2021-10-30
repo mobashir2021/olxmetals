@@ -1,0 +1,58 @@
+﻿@model IEnumerable<tauseefolx.Models.BuyItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SellItemid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Buyerid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Finalprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Boughtdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellItemid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Buyerid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Finalprice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Boughtdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BuyItemid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BuyItemid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BuyItemid })
+        </td>
+    </tr>
+}
+
+</table>

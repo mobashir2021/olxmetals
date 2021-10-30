@@ -1,0 +1,118 @@
+﻿@model IEnumerable<tauseefolx.Models.SellItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usertableid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productdescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productimageone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productimagetwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productimagethree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Productimagefour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Createddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LowestBiddingPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auctiondate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionZipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auctionaddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usertableid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productdescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productimageone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productimagetwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productimagethree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Productimagefour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Createddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowestBiddingPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auctiondate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionZipcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auctionaddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SellItemid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SellItemid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SellItemid })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,65 @@
+﻿@model tauseefolx.Models.BuyItem
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BuyItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SellItemid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellItemid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Buyerid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Buyerid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Finalprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Finalprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Boughtdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Boughtdate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
